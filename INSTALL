@@ -1,0 +1,7 @@
+Thanks for downloading knuckleball-py.
+
+To install it, make sure you have Python 2.7.5 or Python 3.4.2 installed. Then run this command from the command prompt:
+
+    python setup.py install
+
+If you're upgrading from a previous version, you need to remove it first.
