@@ -105,7 +105,7 @@ class KnuckleballTest(unittest.TestCase):
         self.assertRaises(KnuckleballException, Knuckleball.parse, 'RuntimeError: unknown error.')
 
     def test_execute(self):
-        knuckleball = Knuckleball(8001, password='securepassword')
+        knuckleball = Knuckleball('localhost', 8001, password='securepassword')
 
         # Boolean
         self.assertEqual(knuckleball.execute('Boolean create: t withValue: true;'), None)
@@ -145,11 +145,11 @@ class KnuckleballTest(unittest.TestCase):
         self.assertEqual(knuckleball.execute('Context listNamespaces;'), ['std'])
 
         # unauthenticated request
-        knuckleball = Knuckleball(8001)
+        knuckleball = Knuckleball('localhost', 8001)
         self.assertRaises(KnuckleballException, knuckleball.execute, 'i get;')
 
         # wrong password
-        self.assertRaises(KnuckleballException, Knuckleball, 8001, password='wrongpassword')
+        self.assertRaises(KnuckleballException, Knuckleball, 'localhost', 8001, password='wrongpassword')
 
 if __name__ == '__main__':
     unittest.main()

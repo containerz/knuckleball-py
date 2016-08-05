@@ -25,7 +25,7 @@ from knuckleball import connection
 from knuckleball import exception
 
 class Knuckleball:
-    def __init__(self, port, host='127.0.0.1', timeout_in_seconds=None, password=None):
+    def __init__(self, host, port, timeout_in_seconds=None, password=None):
         "Set a TCP connection with the Knuckleball server or raise an error."
         self._tcp_connection = connection.TCPConnection(host, port, timeout_in_seconds)
         if password:
