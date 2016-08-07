@@ -29,7 +29,7 @@ class Knuckleball:
         "Set a TCP connection with the Knuckleball server or raise an error."
         self._tcp_connection = connection.TCPConnection(host, port, timeout_in_seconds)
         if password:
-            self.execute('Connection authenticate: "%s";' % password)
+            self.execute('Connection authenticateWithPassword: "%s";' % password)
 
     def execute(self, command):
         "Execute a command in the Knuckleball server and return the result or raise an error."
